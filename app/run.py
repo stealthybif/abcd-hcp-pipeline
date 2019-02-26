@@ -73,10 +73,11 @@ def generate_parser(parser=None):
     """
     if not parser:
         parser = argparse.ArgumentParser(
-            prog='dcan-pipelines',
+            prog='abcd-hcp-pipeline',
             description=__doc__,
             formatter_class=argparse.RawDescriptionHelpFormatter,
-            epilog=__references__
+            epilog=__references__,
+            usage='%(prog)s [-h] [-v|--version] input_dir output_dir [OPTIONS]'
         )
     parser.add_argument(
         'bids_dir',
