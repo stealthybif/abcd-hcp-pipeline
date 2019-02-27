@@ -57,6 +57,9 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 RUN pip install setuptools wheel
 RUN pip install pyyaml numpy pillow pandas
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && rm -f get-pip.py
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+RUN update-alternatives --set python /usr/bin/python2.7
+
 
 RUN wget -O- http://neuro.debian.net/lists/artful.us-ca.full | tee /etc/apt/sources.list.d/neurodebian.sources.list
 RUN apt-key adv --recv-keys --keyserver hkp://ha.pool.sks-keyservers.net 0xA5D32F012649A5A9 || apt-key adv --recv-keys --keyserver hkp://pool.sks-keyservers.net:80 0xA5D32F012649A5A9
