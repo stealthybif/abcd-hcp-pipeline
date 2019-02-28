@@ -232,6 +232,8 @@ RUN git clone https://github.com/DCAN-Labs/ExecutiveSummary.git executivesummary
 RUN git clone https://github.com/DCAN-Labs/CustomClean.git customclean
 # abcd task prep
 RUN git clone https://github.com/DCAN-Labs/abcd_task_prep.git ABCD_tfMRI
+# create symlink of templates directory to executivesummary
+RUN ln -s /opt/dcan-tools/dcan_bold_proc/templates /opt/dcan-tools/executivesummary/summary-tools
 
 # unless otherwise specified...
 ENV OMP_NUM_THREADS=1
